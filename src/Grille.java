@@ -6,4 +6,8 @@
 public class Grille
 {
 	
+	/**
+	 * 
+	 */
+	int grille [][];
 }
