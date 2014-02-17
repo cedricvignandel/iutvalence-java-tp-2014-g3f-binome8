@@ -1,7 +1,15 @@
-
+/**
+ * 
+ * @author vignandc
+ *
+ */
 public class LanceurDeTicTacToe
 {
-	public static void main(string[]args)
+	/**
+	 * 
+	 * @param args
+	 */
+	public static void main(String[]args)
 	{
 		System.out.println("creation d'une partie de TicTacToe");
 		TicTacToe partieDeTicTacToe = new TicTacToe();
