@@ -36,7 +36,7 @@ public class Grille
 	{
 		ligne=l;
 		colonne=c;
-		
+		grille = new int [][];
 	}
 	
 }
