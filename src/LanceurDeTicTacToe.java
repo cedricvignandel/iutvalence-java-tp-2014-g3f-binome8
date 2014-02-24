@@ -1,16 +1,15 @@
 
 // TODO compléter le commentaire
 /**
- * 
+ * classe principale qui va lancer l'instance d'une partie de morpion 
  * @author vignandc
- *
  */
 public class LanceurDeTicTacToe
 {
 	
 	// TODO compléter le commentaire
 	/**
-	 * 
+	 * constructeur
 	 * @param args
 	 */
 	public static void main(String[]args)
