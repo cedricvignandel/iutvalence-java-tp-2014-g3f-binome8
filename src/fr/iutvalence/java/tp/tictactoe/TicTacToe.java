@@ -1,3 +1,5 @@
+package fr.iutvalence.java.tp.tictactoe;
+
 // TODO compléter le commentaire
 /**C'est le jeu du morpion, alors il doit y avoir une grille de jeu
  * puis deux joueurs ainsi que des ronds et des croix. 

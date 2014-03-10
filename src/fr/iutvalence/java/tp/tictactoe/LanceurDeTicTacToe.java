@@ -1,3 +1,5 @@
+package fr.iutvalence.java.tp.tictactoe;
+
 
 // TODO compléter le commentaire
 /**
