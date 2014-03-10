@@ -21,9 +21,9 @@ public class Grille
 		{
 			for (int y=1 ; y == TAILLE_CARRE ; y++)
 			{
-				grilleDeJeu[x][y]=Pion.vide;
+				this.grilleDeJeu[x][y]=Pion.vide;
 			}
 		}
-	}
+	}	
 	
 }
