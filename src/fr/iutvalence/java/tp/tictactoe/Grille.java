@@ -7,12 +7,21 @@ package fr.iutvalence.java.tp.tictactoe;
 public class Grille
 {
 	// TODO écrire un commentaire
+	/**
+	 * taille du carré en nombre de case
+	 */
 	private final static int TAILLE_CARRE = 3;
 	
 	// TODO écrire un commentaire
+	/**
+	 * allocation tableau grille de jeu
+	 */
 	private Pion[][] grilleDeJeu ;
 	
 	// TODO écrire un commentaire
+	/**
+	 * constructeur et initialisation des cases à VIDE
+	 */
 	public Grille()
 	{
 		this.grilleDeJeu = new Pion[TAILLE_CARRE][TAILLE_CARRE];
@@ -20,7 +29,7 @@ public class Grille
 		{
 			for (int y=1 ; y == TAILLE_CARRE ; y++)
 			{
-				this.grilleDeJeu[x][y]=Pion.vide;
+				this.grilleDeJeu[x][y]=Pion.VIDE;
 			}
 		}
 	}	
