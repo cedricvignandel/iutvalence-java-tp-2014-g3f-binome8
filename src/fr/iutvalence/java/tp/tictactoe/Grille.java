@@ -6,14 +6,13 @@ package fr.iutvalence.java.tp.tictactoe;
  */
 public class Grille
 {
+	// TODO écrire un commentaire
 	private final static int TAILLE_CARRE = 3;
-	/**
-	 * 
-	 */
+	
+	// TODO écrire un commentaire
 	private Pion[][] grilleDeJeu ;
-	/**
-	 * 
-	 */
+	
+	// TODO écrire un commentaire
 	public Grille()
 	{
 		this.grilleDeJeu = new Pion[TAILLE_CARRE][TAILLE_CARRE];
