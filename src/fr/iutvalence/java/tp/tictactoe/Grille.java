@@ -10,8 +10,7 @@ public class Grille
 	/**
 	 * taille du carré en nombre de case
 	 */
-	private final static int TAILLE_CARRE = 3;
-	
+	private final static int TAILLE_CARRE = 3;	
 	// TODO écrire un commentaire
 	/**
 	 * allocation tableau grille de jeu
@@ -32,6 +31,25 @@ public class Grille
 				this.grilleDeJeu[x][y]=Pion.VIDE;
 			}
 		}
-	}	
-	
+	}
+	/**
+	 * 
+	 * @return
+	 */
+	public boolean testerVictoire()
+	{
+		boolean res = false;
+		//algo à faire 
+		return res;
+	}
+	/**
+	 * 
+	 * @param pionAPoser
+	 * @param placeDuPion
+	 */
+	public void poserPion(Pion pionAPoser, Position placeDuPion)
+	{
+		//faire la condition
+		this.grilleDeJeu[placeDuPion.obtenirNumeroDeLigne()][placeDuPion.obtenirNumeroDeColonne()]=pionAPoser;
+	}
 }
