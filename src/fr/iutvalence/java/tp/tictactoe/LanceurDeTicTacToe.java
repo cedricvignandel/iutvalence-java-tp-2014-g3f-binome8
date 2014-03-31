@@ -12,7 +12,7 @@ public class LanceurDeTicTacToe
 	// TODO compléter le commentaire
 	/**
 	 * constructeur
-	 * @param args
+	 * @param args creation d'une partie
 	 */
 	public static void main(String[]args)
 	{

@@ -33,8 +33,7 @@ public class Grille
 		}
 	}
 	/**
-	 * 
-	 * @return
+	 * @return renvoi true en cas de victoire
 	 */
 	public boolean testerVictoire()
 	{
@@ -96,9 +95,9 @@ public class Grille
 		
 	}
 	/**
-	 * 
-	 * @param pionAPoser
-	 * @param placeDuPion
+	 * 			fonction qui affecte un pion à une case
+	 * @param pionAPoser    Soit un ROND soit une CROIX
+	 * @param placeDuPion   designe une case de la grille [ligne][colonne]
 	 */
 	public void poserPion(Pion pionAPoser, Position placeDuPion)
 	{

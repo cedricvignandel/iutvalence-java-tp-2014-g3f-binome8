@@ -6,5 +6,5 @@ package fr.iutvalence.java.tp.tictactoe;
  */
 public class Joueur
 {
-
+//à faire
 }
