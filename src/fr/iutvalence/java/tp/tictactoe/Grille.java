@@ -39,8 +39,61 @@ public class Grille
 	public boolean testerVictoire()
 	{
 		boolean res = false;
-		//algo à faire 
+		int compteurDePionUn = 0;
+		int compteurDePionDeux =0;
+		while (compteurDePionUn!=TAILLE_CARRE && res==false)
+		
+			while (compteurDePionDeux !=TAILLE_CARRE)
+				
+				if (this.grilleDeJeu[compteurDePionUn][compteurDePionDeux]!=pionAPoser)
+				{
+					res=false;
+					break;
+				}
+				else
+				{
+					res=true;
+				}
+				compteurDePionDeux++;
+			compteurDePionDeux=0;
+			while(compteurDePionDeux !=TAILLE_CARRE)
+				if (this.grilleDeJeu[compteurDePionDeux][compteurDePionUn]!=pionAPoser)
+				{
+					res=false;
+					break;
+				}
+				else
+				{
+					res=true;
+				}
+				compteurDePionDeux++;
+			compteurDePionUn++;
+		compteurDePionUn=0;
+		while (compteurDePionUn!=TAILLE_CARRE && res==false)
+			if(this.grilleDeJeu[compteurDePionUn][compteurDePionUn]!=pionAPoser)
+			{
+				res=false;
+				break;
+			}
+			else
+			{
+				res=true;
+			}
+			compteurDePionUn++;
+		compteurDePionUn=0;
+		while(compteurDePionUn!=TAILLE_CARRE && res==false)
+			if(this.grilleDeJeu[compteurDePionUn][TAILLE_CARRE-compteurDePionUn-1]!=pionAPoser)
+			{
+				res=false;
+				break;
+			}
+			else
+			{
+				res=true;
+			}
+			compteurDePionUn++;
 		return res;
+		
 	}
 	/**
 	 * 
@@ -49,7 +102,12 @@ public class Grille
 	 */
 	public void poserPion(Pion pionAPoser, Position placeDuPion)
 	{
-		//faire la condition
-		this.grilleDeJeu[placeDuPion.obtenirNumeroDeLigne()][placeDuPion.obtenirNumeroDeColonne()]=pionAPoser;
+		if(this.grilleDeJeu[placeDuPion.obtenirNumeroDeLigne()]
+				[placeDuPion.obtenirNumeroDeColonne()]==Pion.VIDE)
+		{
+			this.grilleDeJeu[placeDuPion.obtenirNumeroDeLigne()]
+					[placeDuPion.obtenirNumeroDeColonne()]=pionAPoser;	
+		}
+		
 	}
 }
