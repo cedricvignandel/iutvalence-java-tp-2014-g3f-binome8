@@ -30,11 +30,12 @@ public class Grille
 	/**
 	 * @return renvoi true en cas de victoire
 	 */
-	public boolean testerVictoire(Pion dernierPionPose)
+	public boolean testerVictoire(Position positionDuDernierPionPose)
 	{
 		boolean res = false;
 		int compteurDePionUn = 0;
 		int compteurDePionDeux =0;
+		Pion dernierPionPose = this.grille[positionDuDernierPionPose.obtenirNumeroDeLigne()][positionDuDernierPionPose.obtenirNumeroDeColonne()];
 		while (compteurDePionUn!=TAILLE_GRILLE && res==false)
 		
 			while (compteurDePionDeux !=TAILLE_GRILLE)
@@ -93,13 +94,18 @@ public class Grille
 	 * 			fonction qui affecte un pion à une case
 	 * @param pion    Soit un ROND soit une CROIX
 	 * @param position   designe une case de la grille [ligne][colonne]
+	 * @return false si erreur
 	 */
-	public void poserPion(Pion pion, Position position)
+	public boolean poserPion(Pion pion, Position position)
 	{
 		if(this.grille[position.obtenirNumeroDeLigne()]
 				[position.obtenirNumeroDeColonne()] == Pion.VIDE)
+		{
 			this.grille[position.obtenirNumeroDeLigne()]
-					[position.obtenirNumeroDeColonne()] = pion;	
+					[position.obtenirNumeroDeColonne()] = pion;
+			return true;
+		}
+		return false;
 		
 	}
 }

@@ -9,7 +9,7 @@ public abstract class Joueur
 	/**
 	 * 
 	 */
-	private Pion pion;
+	private final Pion pion;
 	/**
 	 * 
 	 * @return position du pion à placer
@@ -21,6 +21,11 @@ public abstract class Joueur
 	public Joueur(Pion pion)
 	{
 		this.pion = pion;
+	}
+	
+	public Pion obtenirPion()
+	{
+		return this.pion;
 	}
 
 }
