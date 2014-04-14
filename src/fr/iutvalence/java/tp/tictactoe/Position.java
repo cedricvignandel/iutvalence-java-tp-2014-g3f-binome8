@@ -2,7 +2,7 @@ package fr.iutvalence.java.tp.tictactoe;
 /**
  * 
  * @author vignandc
- *(copie du code de td)
+ *
  */
 public class Position
 {

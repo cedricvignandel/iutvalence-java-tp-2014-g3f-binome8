@@ -4,7 +4,23 @@ package fr.iutvalence.java.tp.tictactoe;
  * @author vignandc
  *
  */
-public class Joueur
+public abstract class Joueur
 {
-//à faire
+	/**
+	 * 
+	 */
+	private Pion pion;
+	/**
+	 * 
+	 * @return position du pion à placer
+	 */
+	public abstract Position obtenirPosition();
+	/**
+	 * 
+	 */
+	public Joueur(Pion pion)
+	{
+		this.pion = pion;
+	}
+
 }

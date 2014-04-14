@@ -6,16 +6,15 @@ package fr.iutvalence.java.tp.tictactoe;
  */
 public class Grille
 {
-	// TODO écrire un commentaire
 	/**
-	 * taille du carré en nombre de case
+	 * taille de la grille en nombre de cases
 	 */
-	private final static int TAILLE_CARRE = 3;	
-	// TODO écrire un commentaire
+	public final static int TAILLE_GRILLE = 3;	
+	
 	/**
-	 * allocation tableau grille de jeu
+	 * la grille où les pions sont posés
 	 */
-	private Pion[][] grilleDeJeu ;
+	private Pion[][] grille ;
 	
 	// TODO écrire un commentaire
 	/**
@@ -23,28 +22,24 @@ public class Grille
 	 */
 	public Grille()
 	{
-		this.grilleDeJeu = new Pion[TAILLE_CARRE][TAILLE_CARRE];
-		for (int x=1 ; x == TAILLE_CARRE ; x++)
-		{
-			for (int y=1 ; y == TAILLE_CARRE ; y++)
-			{
-				this.grilleDeJeu[x][y]=Pion.VIDE;
-			}
-		}
+		this.grille = new Pion[TAILLE_GRILLE][TAILLE_GRILLE];
+		for (int numeroDeLigne=0 ; numeroDeLigne < TAILLE_GRILLE ; numeroDeLigne++)
+			for (int numeroDeColonne = 0 ; numeroDeColonne < TAILLE_GRILLE ; numeroDeColonne++)
+				this.grille[numeroDeLigne][numeroDeColonne] = Pion.VIDE;
 	}
 	/**
 	 * @return renvoi true en cas de victoire
 	 */
-	public boolean testerVictoire()
+	public boolean testerVictoire(Pion dernierPionPose)
 	{
 		boolean res = false;
 		int compteurDePionUn = 0;
 		int compteurDePionDeux =0;
-		while (compteurDePionUn!=TAILLE_CARRE && res==false)
+		while (compteurDePionUn!=TAILLE_GRILLE && res==false)
 		
-			while (compteurDePionDeux !=TAILLE_CARRE)
+			while (compteurDePionDeux !=TAILLE_GRILLE)
 				
-				if (this.grilleDeJeu[compteurDePionUn][compteurDePionDeux]!=pionAPoser)
+				if (this.grille[compteurDePionUn][compteurDePionDeux]!=dernierPionPose)
 				{
 					res=false;
 					break;
@@ -55,8 +50,8 @@ public class Grille
 				}
 				compteurDePionDeux++;
 			compteurDePionDeux=0;
-			while(compteurDePionDeux !=TAILLE_CARRE)
-				if (this.grilleDeJeu[compteurDePionDeux][compteurDePionUn]!=pionAPoser)
+			while(compteurDePionDeux !=TAILLE_GRILLE)
+				if (this.grille[compteurDePionDeux][compteurDePionUn]!=dernierPionPose)
 				{
 					res=false;
 					break;
@@ -68,8 +63,8 @@ public class Grille
 				compteurDePionDeux++;
 			compteurDePionUn++;
 		compteurDePionUn=0;
-		while (compteurDePionUn!=TAILLE_CARRE && res==false)
-			if(this.grilleDeJeu[compteurDePionUn][compteurDePionUn]!=pionAPoser)
+		while (compteurDePionUn!=TAILLE_GRILLE && res==false)
+			if(this.grille[compteurDePionUn][compteurDePionUn]!=dernierPionPose)
 			{
 				res=false;
 				break;
@@ -80,8 +75,8 @@ public class Grille
 			}
 			compteurDePionUn++;
 		compteurDePionUn=0;
-		while(compteurDePionUn!=TAILLE_CARRE && res==false)
-			if(this.grilleDeJeu[compteurDePionUn][TAILLE_CARRE-compteurDePionUn-1]!=pionAPoser)
+		while(compteurDePionUn!=TAILLE_GRILLE && res==false)
+			if(this.grille[compteurDePionUn][TAILLE_GRILLE-compteurDePionUn-1]!=dernierPionPose)
 			{
 				res=false;
 				break;
@@ -96,17 +91,15 @@ public class Grille
 	}
 	/**
 	 * 			fonction qui affecte un pion à une case
-	 * @param pionAPoser    Soit un ROND soit une CROIX
-	 * @param placeDuPion   designe une case de la grille [ligne][colonne]
+	 * @param pion    Soit un ROND soit une CROIX
+	 * @param position   designe une case de la grille [ligne][colonne]
 	 */
-	public void poserPion(Pion pionAPoser, Position placeDuPion)
+	public void poserPion(Pion pion, Position position)
 	{
-		if(this.grilleDeJeu[placeDuPion.obtenirNumeroDeLigne()]
-				[placeDuPion.obtenirNumeroDeColonne()]==Pion.VIDE)
-		{
-			this.grilleDeJeu[placeDuPion.obtenirNumeroDeLigne()]
-					[placeDuPion.obtenirNumeroDeColonne()]=pionAPoser;	
-		}
+		if(this.grille[position.obtenirNumeroDeLigne()]
+				[position.obtenirNumeroDeColonne()] == Pion.VIDE)
+			this.grille[position.obtenirNumeroDeLigne()]
+					[position.obtenirNumeroDeColonne()] = pion;	
 		
 	}
 }

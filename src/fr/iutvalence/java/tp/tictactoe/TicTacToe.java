@@ -11,33 +11,26 @@ public class TicTacToe
 	/**
 	 * 
 	 */
-	private int tour=0;
-	/**
-	 * 
-	 */
-	private boolean finPartie;
-	/**
-	 * 
-	 */
-	public Grille nouvelleGrille;
+	private  Grille grille;
 	/**
 	 * 
 	 */
 	public TicTacToe()
 	{
-		this.nouvelleGrille= new Grille();
-		this.finPartie=false;
+		this.grille= new Grille();
 	}
+	
 	/**
 	 * 
 	 */
 	public void jouer()
 	{
+		Pion gagnant = Pion.VIDE;
 		
-		for(tour=0;(! finPartie||tour<9);tour++)
+		for(int numeroDuTour=0; numeroDuTour< Grille.TAILLE_GRILLE * Grille.TAILLE_GRILLE);numeroDuTour++)
 		{
-			nouvelleGrille.poserPion();
-			if(nouvelleGrille.testerVictoire())
+			grille.poserPion(pionAPoser,placeDuPion);
+			if(grille.testerVictoire(dernierPionPose))
 			{
 				break;
 			}

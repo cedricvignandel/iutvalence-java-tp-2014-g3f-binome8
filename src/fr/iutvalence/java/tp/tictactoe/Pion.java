@@ -8,24 +8,20 @@ package fr.iutvalence.java.tp.tictactoe;
  */
 public enum Pion
 {
-	// TODO écrire un commentaire
-	// TODO respecter les conventions d'écriture
 	/**
-	 * Une case occupée par une croix renvera croix 
-	 * Un pion plaçable sur une case
+	 * la marque "croix"
 	 */
 	CROIX,
 	// TODO écrire un commentaire
 	// TODO respecter les conventions d'écriture
 	/**
-	 * Une case occupée par un rond renvera rond 
-	 * Un pion plaçable sur une case
+	 * La marque "rond"
 	 */
 	ROND,
 	// TODO écrire un commentaire
 	// TODO respecter les conventions d'écriture
 	/**
-	 * Une case non occupée 
+	 * pas de marque
 	 */
 	VIDE;
 }
